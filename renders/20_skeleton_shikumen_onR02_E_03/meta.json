@@ -1,0 +1,41 @@
+{
+  "grammar": "shikumen",
+  "house_id": "R02_E_03",
+  "total_points": 79997,
+  "counts": {
+    "brick_edge": 35692,
+    "module_center": 8503,
+    "roof_tile": 54,
+    "trim": 1
+  },
+  "bounds_m": [
+    0.0,
+    3.8,
+    0.0,
+    12.08,
+    0.0,
+    8.5288
+  ],
+  "shell_dims_m": [
+    3.8,
+    12.08
+  ],
+  "generation_seconds": 2.5362179279327393,
+  "csv_sampling": "line elements store vertices only; web densifies at 0.01–0.015 m",
+  "acceptance": {
+    "passed": true,
+    "shell_error_m": [
+      0,
+      0
+    ],
+    "birth_distance_correlation": 0.999923005529896,
+    "birth_distance_threshold": 0.9,
+    "line_birth_monotonic": true,
+    "almond_child_not_before_branch": null
+  },
+  "status": "正式",
+  "baseline_status": "正式批量结果",
+  "birth_method": "house-wide surface distance from nearest break/eave, normalized 0–150; roof continues from wall-top distance",
+  "birth_normalization_max_surface_m": 10.183387983459228,
+  "birth_updated_at": "2026-11-09T19:57:07"
+}

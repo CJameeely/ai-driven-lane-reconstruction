@@ -1,0 +1,21 @@
+{
+  "house_id": "R02_E_02",
+  "grammar": "shikumen",
+  "classification": "作者设定",
+  "source": "web/forming.json panels",
+  "counts": {
+    "brick": 7489,
+    "trim": 16,
+    "window": 4,
+    "window_frame": 24,
+    "door": 2,
+    "seam": 9,
+    "tile": 62
+  },
+  "coverage_percent": 100.0,
+  "coverage_basis": "裁切后填充系统包络面积/扣除门窗洞的缺失区域面积；砌体灰缝计入砌体填充系统",
+  "outside_shell_area_m2": 0.0,
+  "birth_delay_steps": 10,
+  "passed": true,
+  "seconds": 1.516
+}

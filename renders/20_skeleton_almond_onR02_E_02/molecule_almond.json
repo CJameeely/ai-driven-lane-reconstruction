@@ -1,0 +1,53 @@
+{
+  "grammar": "almond",
+  "vertices": [
+    {
+      "axis": "twist",
+      "key": "twist",
+      "raw": 0.3,
+      "mapped_radius": 0.74,
+      "x": 0.74,
+      "y": 0.0
+    },
+    {
+      "axis": "seg",
+      "key": "seg",
+      "raw": 0.4,
+      "mapped_radius": 0.5125,
+      "x": 0.25625000000000003,
+      "y": 0.4438380194395247
+    },
+    {
+      "axis": "radius",
+      "key": "radius",
+      "raw": 1.6,
+      "mapped_radius": 0.636,
+      "x": -0.3179999999999999,
+      "y": 0.5507921568069031
+    },
+    {
+      "axis": "spread",
+      "key": "spread",
+      "raw": 0.06,
+      "mapped_radius": 0.87,
+      "x": -0.87,
+      "y": 1.0654427152581973e-16
+    },
+    {
+      "axis": "dz",
+      "key": "dz",
+      "raw": 0.3,
+      "mapped_radius": 0.6749999999999999,
+      "x": -0.33750000000000024,
+      "y": -0.5845671475544958
+    },
+    {
+      "axis": "pipe",
+      "key": "pipe_radius",
+      "raw": 0.02,
+      "mapped_radius": 0.5125,
+      "x": 0.25625000000000003,
+      "y": -0.4438380194395247
+    }
+  ]
+}

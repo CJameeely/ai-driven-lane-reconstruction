@@ -1,0 +1,53 @@
+{
+  "grammar": "shikumen",
+  "vertices": [
+    {
+      "axis": "twist",
+      "key": "twist",
+      "raw": 0.05,
+      "mapped_radius": 0.415,
+      "x": 0.415,
+      "y": 0.0
+    },
+    {
+      "axis": "seg",
+      "key": "seg",
+      "raw": 0.7,
+      "mapped_radius": 0.7562499999999999,
+      "x": 0.37812500000000004,
+      "y": 0.6549317116119816
+    },
+    {
+      "axis": "radius",
+      "key": "radius",
+      "raw": 2.5,
+      "mapped_radius": 0.87,
+      "x": -0.43499999999999983,
+      "y": 0.7534421012924617
+    },
+    {
+      "axis": "spread",
+      "key": "spread",
+      "raw": -0.02,
+      "mapped_radius": 0.61,
+      "x": -0.61,
+      "y": 7.470345474798854e-17
+    },
+    {
+      "axis": "dz",
+      "key": "dz",
+      "raw": 0.25,
+      "mapped_radius": 0.59375,
+      "x": -0.2968750000000003,
+      "y": -0.5142025834970103
+    },
+    {
+      "axis": "pipe",
+      "key": "pipe_radius",
+      "raw": 0.02,
+      "mapped_radius": 0.5125,
+      "x": 0.25625000000000003,
+      "y": -0.4438380194395247
+    }
+  ]
+}

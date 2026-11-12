@@ -1,0 +1,1525 @@
+{
+  "口径": {
+    "typology_identity": "作者设定：typologies/shikumen.json",
+    "bay_and_lot_dimensions": "模型导出值：community_05/community.json",
+    "segments_rooms_heights": "模型导出值：各户growth/rooms.json的bbox",
+    "standard_storey_height_m": "模型导出值：各户growth/targets.obj；二层楼板下表面标高3.2m减一层地面标高0.0m",
+    "ridge_height_m": "模型导出值：各户growth/targets.obj；屋脊外表面最高点标高8.5288m减一层地面标高0.0m，檐口下表面标高6.6m",
+    "null_policy": "typology.json和rooms.json没有的数值不推测，写null"
+  },
+  "typology": {
+    "id": "shikumen",
+    "name": "上海石库门里弄住宅",
+    "aliases": [
+      "石库门",
+      "旧式里弄",
+      "里弄住宅",
+      "shikumen",
+      "lilong"
+    ],
+    "description": "单开间、两层加亭子间和晒台：前天井、客堂、楼梯间、灶披间、后天井；楼上前楼、亭子间、晒台。砖墙承重，木楼板、木屋架、木隔扇。",
+    "script": "shikumen_typology.py",
+    "unit_bays": 1,
+    "max_row_units": 6,
+    "floors": 2,
+    "note": "多开间按单开间平移复制成联排，单元之间是分户墙；超过 max_row_units 时截断为 1 开间"
+  },
+  "houses": [
+    {
+      "house_id": "R02_W_01",
+      "bay_count": 2,
+      "bay_width_m": 3.8,
+      "lot_width_m": 7.6,
+      "total_depth_m": 12.08,
+      "standard_storey_height_m": 3.2,
+      "ridge_height_m": 8.5288,
+      "level_heights_m": {
+        "main_ground_floor": 3.2,
+        "main_upper_floor": 3.4,
+        "rear_ground_floor": 2.6,
+        "tingzijian": 2.2
+      },
+      "segments": {
+        "front_courtyard": {
+          "width_m": 3.32,
+          "depth_m": 2.416,
+          "height_m": 4.5
+        },
+        "main_building": {
+          "width_m": 3.32,
+          "depth_m": 6.04,
+          "height_to_eave_m": 6.6
+        },
+        "rear_part": {
+          "width_m": 3.32,
+          "depth_m": 3.624,
+          "terrace_height_m": 5.8
+        }
+      },
+      "rooms": [
+        {
+          "name": "前天井",
+          "function": "入口庭院，采光通风",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 4.5,
+            "bbox_m": [
+              0.24,
+              0.0,
+              0.0,
+              3.56,
+              2.416,
+              4.5
+            ]
+          }
+        },
+        {
+          "name": "客堂",
+          "function": "起居会客，正对天井",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 4.832,
+            "height_m": 3.2,
+            "bbox_m": [
+              0.24,
+              2.416,
+              0.0,
+              3.56,
+              7.248,
+              3.2
+            ]
+          }
+        },
+        {
+          "name": "楼梯间",
+          "function": "垂直交通，连通前楼和亭子间",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 1.208,
+            "height_m": 3.2,
+            "bbox_m": [
+              0.24,
+              7.248,
+              0.0,
+              3.56,
+              8.456,
+              3.2
+            ]
+          }
+        },
+        {
+          "name": "灶披间",
+          "function": "厨房",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 2.6,
+            "bbox_m": [
+              0.24,
+              8.456,
+              0.0,
+              3.56,
+              10.872,
+              2.6
+            ]
+          }
+        },
+        {
+          "name": "后天井",
+          "function": "后院，后门出入",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 1.208,
+            "height_m": 2.6,
+            "bbox_m": [
+              0.24,
+              10.872,
+              0.0,
+              3.56,
+              12.08,
+              2.6
+            ]
+          }
+        },
+        {
+          "name": "前楼",
+          "function": "主卧室",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 6.04,
+            "height_m": 3.4,
+            "bbox_m": [
+              0.24,
+              2.416,
+              3.2,
+              3.56,
+              8.456,
+              6.6
+            ]
+          }
+        },
+        {
+          "name": "亭子间",
+          "function": "小卧室或书房（半层）",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 2.2,
+            "bbox_m": [
+              0.24,
+              8.456,
+              2.6,
+              3.56,
+              10.872,
+              4.8
+            ]
+          }
+        },
+        {
+          "name": "晒台",
+          "function": "晾晒露台",
+          "source": "imagined",
+          "confidence": 0.35,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 1.0,
+            "bbox_m": [
+              0.24,
+              8.456,
+              4.8,
+              3.56,
+              10.872,
+              5.8
+            ]
+          }
+        },
+        {
+          "name": "前天井·2",
+          "function": "入口庭院，采光通风",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 4.5,
+            "bbox_m": [
+              4.04,
+              0.0,
+              0.0,
+              7.36,
+              2.416,
+              4.5
+            ]
+          }
+        },
+        {
+          "name": "客堂·2",
+          "function": "起居会客，正对天井",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 4.832,
+            "height_m": 3.2,
+            "bbox_m": [
+              4.04,
+              2.416,
+              0.0,
+              7.36,
+              7.248,
+              3.2
+            ]
+          }
+        },
+        {
+          "name": "楼梯间·2",
+          "function": "垂直交通，连通前楼和亭子间",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 1.208,
+            "height_m": 3.2,
+            "bbox_m": [
+              4.04,
+              7.248,
+              0.0,
+              7.36,
+              8.456,
+              3.2
+            ]
+          }
+        },
+        {
+          "name": "灶披间·2",
+          "function": "厨房",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 2.6,
+            "bbox_m": [
+              4.04,
+              8.456,
+              0.0,
+              7.36,
+              10.872,
+              2.6
+            ]
+          }
+        },
+        {
+          "name": "后天井·2",
+          "function": "后院，后门出入",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 1.208,
+            "height_m": 2.6,
+            "bbox_m": [
+              4.04,
+              10.872,
+              0.0,
+              7.36,
+              12.08,
+              2.6
+            ]
+          }
+        },
+        {
+          "name": "前楼·2",
+          "function": "主卧室",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 6.04,
+            "height_m": 3.4,
+            "bbox_m": [
+              4.04,
+              2.416,
+              3.2,
+              7.36,
+              8.456,
+              6.6
+            ]
+          }
+        },
+        {
+          "name": "亭子间·2",
+          "function": "小卧室或书房（半层）",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 2.2,
+            "bbox_m": [
+              4.04,
+              8.456,
+              2.6,
+              7.36,
+              10.872,
+              4.8
+            ]
+          }
+        },
+        {
+          "name": "晒台·2",
+          "function": "晾晒露台",
+          "source": "imagined",
+          "confidence": 0.35,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 1.0,
+            "bbox_m": [
+              4.04,
+              8.456,
+              4.8,
+              7.36,
+              10.872,
+              5.8
+            ]
+          }
+        }
+      ],
+      "room_names": [
+        "前天井",
+        "客堂",
+        "楼梯间",
+        "灶披间",
+        "后天井",
+        "前楼",
+        "亭子间",
+        "晒台",
+        "前天井·2",
+        "客堂·2",
+        "楼梯间·2",
+        "灶披间·2",
+        "后天井·2",
+        "前楼·2",
+        "亭子间·2",
+        "晒台·2"
+      ]
+    },
+    {
+      "house_id": "R02_W_02",
+      "bay_count": 1,
+      "bay_width_m": 3.8,
+      "lot_width_m": 3.8,
+      "total_depth_m": 12.08,
+      "standard_storey_height_m": 3.2,
+      "ridge_height_m": 8.5288,
+      "level_heights_m": {
+        "main_ground_floor": 3.2,
+        "main_upper_floor": 3.4,
+        "rear_ground_floor": 2.6,
+        "tingzijian": 2.2
+      },
+      "segments": {
+        "front_courtyard": {
+          "width_m": 3.32,
+          "depth_m": 2.416,
+          "height_m": 4.5
+        },
+        "main_building": {
+          "width_m": 3.32,
+          "depth_m": 6.04,
+          "height_to_eave_m": 6.6
+        },
+        "rear_part": {
+          "width_m": 3.32,
+          "depth_m": 3.624,
+          "terrace_height_m": 5.8
+        }
+      },
+      "rooms": [
+        {
+          "name": "前天井",
+          "function": "入口庭院，采光通风",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 4.5,
+            "bbox_m": [
+              0.24,
+              0.0,
+              0.0,
+              3.56,
+              2.416,
+              4.5
+            ]
+          }
+        },
+        {
+          "name": "客堂",
+          "function": "起居会客，正对天井",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 4.832,
+            "height_m": 3.2,
+            "bbox_m": [
+              0.24,
+              2.416,
+              0.0,
+              3.56,
+              7.248,
+              3.2
+            ]
+          }
+        },
+        {
+          "name": "楼梯间",
+          "function": "垂直交通，连通前楼和亭子间",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 1.208,
+            "height_m": 3.2,
+            "bbox_m": [
+              0.24,
+              7.248,
+              0.0,
+              3.56,
+              8.456,
+              3.2
+            ]
+          }
+        },
+        {
+          "name": "灶披间",
+          "function": "厨房",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 2.6,
+            "bbox_m": [
+              0.24,
+              8.456,
+              0.0,
+              3.56,
+              10.872,
+              2.6
+            ]
+          }
+        },
+        {
+          "name": "后天井",
+          "function": "后院，后门出入",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 1.208,
+            "height_m": 2.6,
+            "bbox_m": [
+              0.24,
+              10.872,
+              0.0,
+              3.56,
+              12.08,
+              2.6
+            ]
+          }
+        },
+        {
+          "name": "前楼",
+          "function": "主卧室",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 6.04,
+            "height_m": 3.4,
+            "bbox_m": [
+              0.24,
+              2.416,
+              3.2,
+              3.56,
+              8.456,
+              6.6
+            ]
+          }
+        },
+        {
+          "name": "亭子间",
+          "function": "小卧室或书房（半层）",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 2.2,
+            "bbox_m": [
+              0.24,
+              8.456,
+              2.6,
+              3.56,
+              10.872,
+              4.8
+            ]
+          }
+        },
+        {
+          "name": "晒台",
+          "function": "晾晒露台",
+          "source": "imagined",
+          "confidence": 0.35,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 1.0,
+            "bbox_m": [
+              0.24,
+              8.456,
+              4.8,
+              3.56,
+              10.872,
+              5.8
+            ]
+          }
+        }
+      ],
+      "room_names": [
+        "前天井",
+        "客堂",
+        "楼梯间",
+        "灶披间",
+        "后天井",
+        "前楼",
+        "亭子间",
+        "晒台"
+      ]
+    },
+    {
+      "house_id": "R02_W_03",
+      "bay_count": 1,
+      "bay_width_m": 3.8,
+      "lot_width_m": 3.8,
+      "total_depth_m": 12.08,
+      "standard_storey_height_m": 3.2,
+      "ridge_height_m": 8.5288,
+      "level_heights_m": {
+        "main_ground_floor": 3.2,
+        "main_upper_floor": 3.4,
+        "rear_ground_floor": 2.6,
+        "tingzijian": 2.2
+      },
+      "segments": {
+        "front_courtyard": {
+          "width_m": 3.32,
+          "depth_m": 2.416,
+          "height_m": 4.5
+        },
+        "main_building": {
+          "width_m": 3.32,
+          "depth_m": 6.04,
+          "height_to_eave_m": 6.6
+        },
+        "rear_part": {
+          "width_m": 3.32,
+          "depth_m": 3.624,
+          "terrace_height_m": 5.8
+        }
+      },
+      "rooms": [
+        {
+          "name": "前天井",
+          "function": "入口庭院，采光通风",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 4.5,
+            "bbox_m": [
+              0.24,
+              0.0,
+              0.0,
+              3.56,
+              2.416,
+              4.5
+            ]
+          }
+        },
+        {
+          "name": "客堂",
+          "function": "起居会客，正对天井",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 4.832,
+            "height_m": 3.2,
+            "bbox_m": [
+              0.24,
+              2.416,
+              0.0,
+              3.56,
+              7.248,
+              3.2
+            ]
+          }
+        },
+        {
+          "name": "楼梯间",
+          "function": "垂直交通，连通前楼和亭子间",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 1.208,
+            "height_m": 3.2,
+            "bbox_m": [
+              0.24,
+              7.248,
+              0.0,
+              3.56,
+              8.456,
+              3.2
+            ]
+          }
+        },
+        {
+          "name": "灶披间",
+          "function": "厨房",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 2.6,
+            "bbox_m": [
+              0.24,
+              8.456,
+              0.0,
+              3.56,
+              10.872,
+              2.6
+            ]
+          }
+        },
+        {
+          "name": "后天井",
+          "function": "后院，后门出入",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 1.208,
+            "height_m": 2.6,
+            "bbox_m": [
+              0.24,
+              10.872,
+              0.0,
+              3.56,
+              12.08,
+              2.6
+            ]
+          }
+        },
+        {
+          "name": "前楼",
+          "function": "主卧室",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 6.04,
+            "height_m": 3.4,
+            "bbox_m": [
+              0.24,
+              2.416,
+              3.2,
+              3.56,
+              8.456,
+              6.6
+            ]
+          }
+        },
+        {
+          "name": "亭子间",
+          "function": "小卧室或书房（半层）",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 2.2,
+            "bbox_m": [
+              0.24,
+              8.456,
+              2.6,
+              3.56,
+              10.872,
+              4.8
+            ]
+          }
+        },
+        {
+          "name": "晒台",
+          "function": "晾晒露台",
+          "source": "imagined",
+          "confidence": 0.35,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 1.0,
+            "bbox_m": [
+              0.24,
+              8.456,
+              4.8,
+              3.56,
+              10.872,
+              5.8
+            ]
+          }
+        }
+      ],
+      "room_names": [
+        "前天井",
+        "客堂",
+        "楼梯间",
+        "灶披间",
+        "后天井",
+        "前楼",
+        "亭子间",
+        "晒台"
+      ]
+    },
+    {
+      "house_id": "R02_E_01",
+      "bay_count": 2,
+      "bay_width_m": 3.8,
+      "lot_width_m": 7.6,
+      "total_depth_m": 12.08,
+      "standard_storey_height_m": 3.2,
+      "ridge_height_m": 8.5288,
+      "level_heights_m": {
+        "main_ground_floor": 3.2,
+        "main_upper_floor": 3.4,
+        "rear_ground_floor": 2.6,
+        "tingzijian": 2.2
+      },
+      "segments": {
+        "front_courtyard": {
+          "width_m": 3.32,
+          "depth_m": 2.416,
+          "height_m": 4.5
+        },
+        "main_building": {
+          "width_m": 3.32,
+          "depth_m": 6.04,
+          "height_to_eave_m": 6.6
+        },
+        "rear_part": {
+          "width_m": 3.32,
+          "depth_m": 3.624,
+          "terrace_height_m": 5.8
+        }
+      },
+      "rooms": [
+        {
+          "name": "前天井",
+          "function": "入口庭院，采光通风",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 4.5,
+            "bbox_m": [
+              0.24,
+              0.0,
+              0.0,
+              3.56,
+              2.416,
+              4.5
+            ]
+          }
+        },
+        {
+          "name": "客堂",
+          "function": "起居会客，正对天井",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 4.832,
+            "height_m": 3.2,
+            "bbox_m": [
+              0.24,
+              2.416,
+              0.0,
+              3.56,
+              7.248,
+              3.2
+            ]
+          }
+        },
+        {
+          "name": "楼梯间",
+          "function": "垂直交通，连通前楼和亭子间",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 1.208,
+            "height_m": 3.2,
+            "bbox_m": [
+              0.24,
+              7.248,
+              0.0,
+              3.56,
+              8.456,
+              3.2
+            ]
+          }
+        },
+        {
+          "name": "灶披间",
+          "function": "厨房",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 2.6,
+            "bbox_m": [
+              0.24,
+              8.456,
+              0.0,
+              3.56,
+              10.872,
+              2.6
+            ]
+          }
+        },
+        {
+          "name": "后天井",
+          "function": "后院，后门出入",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 1.208,
+            "height_m": 2.6,
+            "bbox_m": [
+              0.24,
+              10.872,
+              0.0,
+              3.56,
+              12.08,
+              2.6
+            ]
+          }
+        },
+        {
+          "name": "前楼",
+          "function": "主卧室",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 6.04,
+            "height_m": 3.4,
+            "bbox_m": [
+              0.24,
+              2.416,
+              3.2,
+              3.56,
+              8.456,
+              6.6
+            ]
+          }
+        },
+        {
+          "name": "亭子间",
+          "function": "小卧室或书房（半层）",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 2.2,
+            "bbox_m": [
+              0.24,
+              8.456,
+              2.6,
+              3.56,
+              10.872,
+              4.8
+            ]
+          }
+        },
+        {
+          "name": "晒台",
+          "function": "晾晒露台",
+          "source": "imagined",
+          "confidence": 0.35,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 1.0,
+            "bbox_m": [
+              0.24,
+              8.456,
+              4.8,
+              3.56,
+              10.872,
+              5.8
+            ]
+          }
+        },
+        {
+          "name": "前天井·2",
+          "function": "入口庭院，采光通风",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 4.5,
+            "bbox_m": [
+              4.04,
+              0.0,
+              0.0,
+              7.36,
+              2.416,
+              4.5
+            ]
+          }
+        },
+        {
+          "name": "客堂·2",
+          "function": "起居会客，正对天井",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 4.832,
+            "height_m": 3.2,
+            "bbox_m": [
+              4.04,
+              2.416,
+              0.0,
+              7.36,
+              7.248,
+              3.2
+            ]
+          }
+        },
+        {
+          "name": "楼梯间·2",
+          "function": "垂直交通，连通前楼和亭子间",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 1.208,
+            "height_m": 3.2,
+            "bbox_m": [
+              4.04,
+              7.248,
+              0.0,
+              7.36,
+              8.456,
+              3.2
+            ]
+          }
+        },
+        {
+          "name": "灶披间·2",
+          "function": "厨房",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 2.6,
+            "bbox_m": [
+              4.04,
+              8.456,
+              0.0,
+              7.36,
+              10.872,
+              2.6
+            ]
+          }
+        },
+        {
+          "name": "后天井·2",
+          "function": "后院，后门出入",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 1.208,
+            "height_m": 2.6,
+            "bbox_m": [
+              4.04,
+              10.872,
+              0.0,
+              7.36,
+              12.08,
+              2.6
+            ]
+          }
+        },
+        {
+          "name": "前楼·2",
+          "function": "主卧室",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 6.04,
+            "height_m": 3.4,
+            "bbox_m": [
+              4.04,
+              2.416,
+              3.2,
+              7.36,
+              8.456,
+              6.6
+            ]
+          }
+        },
+        {
+          "name": "亭子间·2",
+          "function": "小卧室或书房（半层）",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 2.2,
+            "bbox_m": [
+              4.04,
+              8.456,
+              2.6,
+              7.36,
+              10.872,
+              4.8
+            ]
+          }
+        },
+        {
+          "name": "晒台·2",
+          "function": "晾晒露台",
+          "source": "imagined",
+          "confidence": 0.35,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 1.0,
+            "bbox_m": [
+              4.04,
+              8.456,
+              4.8,
+              7.36,
+              10.872,
+              5.8
+            ]
+          }
+        }
+      ],
+      "room_names": [
+        "前天井",
+        "客堂",
+        "楼梯间",
+        "灶披间",
+        "后天井",
+        "前楼",
+        "亭子间",
+        "晒台",
+        "前天井·2",
+        "客堂·2",
+        "楼梯间·2",
+        "灶披间·2",
+        "后天井·2",
+        "前楼·2",
+        "亭子间·2",
+        "晒台·2"
+      ]
+    },
+    {
+      "house_id": "R02_E_02",
+      "bay_count": 1,
+      "bay_width_m": 3.8,
+      "lot_width_m": 3.8,
+      "total_depth_m": 12.08,
+      "standard_storey_height_m": 3.2,
+      "ridge_height_m": 8.5288,
+      "level_heights_m": {
+        "main_ground_floor": 3.2,
+        "main_upper_floor": 3.4,
+        "rear_ground_floor": 2.6,
+        "tingzijian": 2.2
+      },
+      "segments": {
+        "front_courtyard": {
+          "width_m": 3.32,
+          "depth_m": 2.416,
+          "height_m": 4.5
+        },
+        "main_building": {
+          "width_m": 3.32,
+          "depth_m": 6.04,
+          "height_to_eave_m": 6.6
+        },
+        "rear_part": {
+          "width_m": 3.32,
+          "depth_m": 3.624,
+          "terrace_height_m": 5.8
+        }
+      },
+      "rooms": [
+        {
+          "name": "前天井",
+          "function": "入口庭院，采光通风",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 4.5,
+            "bbox_m": [
+              0.24,
+              0.0,
+              0.0,
+              3.56,
+              2.416,
+              4.5
+            ]
+          }
+        },
+        {
+          "name": "客堂",
+          "function": "起居会客，正对天井",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 4.832,
+            "height_m": 3.2,
+            "bbox_m": [
+              0.24,
+              2.416,
+              0.0,
+              3.56,
+              7.248,
+              3.2
+            ]
+          }
+        },
+        {
+          "name": "楼梯间",
+          "function": "垂直交通，连通前楼和亭子间",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 1.208,
+            "height_m": 3.2,
+            "bbox_m": [
+              0.24,
+              7.248,
+              0.0,
+              3.56,
+              8.456,
+              3.2
+            ]
+          }
+        },
+        {
+          "name": "灶披间",
+          "function": "厨房",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 2.6,
+            "bbox_m": [
+              0.24,
+              8.456,
+              0.0,
+              3.56,
+              10.872,
+              2.6
+            ]
+          }
+        },
+        {
+          "name": "后天井",
+          "function": "后院，后门出入",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 1.208,
+            "height_m": 2.6,
+            "bbox_m": [
+              0.24,
+              10.872,
+              0.0,
+              3.56,
+              12.08,
+              2.6
+            ]
+          }
+        },
+        {
+          "name": "前楼",
+          "function": "主卧室",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 6.04,
+            "height_m": 3.4,
+            "bbox_m": [
+              0.24,
+              2.416,
+              3.2,
+              3.56,
+              8.456,
+              6.6
+            ]
+          }
+        },
+        {
+          "name": "亭子间",
+          "function": "小卧室或书房（半层）",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 2.2,
+            "bbox_m": [
+              0.24,
+              8.456,
+              2.6,
+              3.56,
+              10.872,
+              4.8
+            ]
+          }
+        },
+        {
+          "name": "晒台",
+          "function": "晾晒露台",
+          "source": "imagined",
+          "confidence": 0.35,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 1.0,
+            "bbox_m": [
+              0.24,
+              8.456,
+              4.8,
+              3.56,
+              10.872,
+              5.8
+            ]
+          }
+        }
+      ],
+      "room_names": [
+        "前天井",
+        "客堂",
+        "楼梯间",
+        "灶披间",
+        "后天井",
+        "前楼",
+        "亭子间",
+        "晒台"
+      ]
+    },
+    {
+      "house_id": "R02_E_03",
+      "bay_count": 1,
+      "bay_width_m": 3.8,
+      "lot_width_m": 3.8,
+      "total_depth_m": 12.08,
+      "standard_storey_height_m": 3.2,
+      "ridge_height_m": 8.5288,
+      "level_heights_m": {
+        "main_ground_floor": 3.2,
+        "main_upper_floor": 3.4,
+        "rear_ground_floor": 2.6,
+        "tingzijian": 2.2
+      },
+      "segments": {
+        "front_courtyard": {
+          "width_m": 3.32,
+          "depth_m": 2.416,
+          "height_m": 4.5
+        },
+        "main_building": {
+          "width_m": 3.32,
+          "depth_m": 6.04,
+          "height_to_eave_m": 6.6
+        },
+        "rear_part": {
+          "width_m": 3.32,
+          "depth_m": 3.624,
+          "terrace_height_m": 5.8
+        }
+      },
+      "rooms": [
+        {
+          "name": "前天井",
+          "function": "入口庭院，采光通风",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 4.5,
+            "bbox_m": [
+              0.24,
+              0.0,
+              0.0,
+              3.56,
+              2.416,
+              4.5
+            ]
+          }
+        },
+        {
+          "name": "客堂",
+          "function": "起居会客，正对天井",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 4.832,
+            "height_m": 3.2,
+            "bbox_m": [
+              0.24,
+              2.416,
+              0.0,
+              3.56,
+              7.248,
+              3.2
+            ]
+          }
+        },
+        {
+          "name": "楼梯间",
+          "function": "垂直交通，连通前楼和亭子间",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 1.208,
+            "height_m": 3.2,
+            "bbox_m": [
+              0.24,
+              7.248,
+              0.0,
+              3.56,
+              8.456,
+              3.2
+            ]
+          }
+        },
+        {
+          "name": "灶披间",
+          "function": "厨房",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 2.6,
+            "bbox_m": [
+              0.24,
+              8.456,
+              0.0,
+              3.56,
+              10.872,
+              2.6
+            ]
+          }
+        },
+        {
+          "name": "后天井",
+          "function": "后院，后门出入",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 1.208,
+            "height_m": 2.6,
+            "bbox_m": [
+              0.24,
+              10.872,
+              0.0,
+              3.56,
+              12.08,
+              2.6
+            ]
+          }
+        },
+        {
+          "name": "前楼",
+          "function": "主卧室",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 6.04,
+            "height_m": 3.4,
+            "bbox_m": [
+              0.24,
+              2.416,
+              3.2,
+              3.56,
+              8.456,
+              6.6
+            ]
+          }
+        },
+        {
+          "name": "亭子间",
+          "function": "小卧室或书房（半层）",
+          "source": "typology",
+          "confidence": 0.6,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 2.2,
+            "bbox_m": [
+              0.24,
+              8.456,
+              2.6,
+              3.56,
+              10.872,
+              4.8
+            ]
+          }
+        },
+        {
+          "name": "晒台",
+          "function": "晾晒露台",
+          "source": "imagined",
+          "confidence": 0.35,
+          "dimensions": {
+            "width_m": 3.32,
+            "depth_m": 2.416,
+            "height_m": 1.0,
+            "bbox_m": [
+              0.24,
+              8.456,
+              4.8,
+              3.56,
+              10.872,
+              5.8
+            ]
+          }
+        }
+      ],
+      "room_names": [
+        "前天井",
+        "客堂",
+        "楼梯间",
+        "灶披间",
+        "后天井",
+        "前楼",
+        "亭子间",
+        "晒台"
+      ]
+    }
+  ]
+}

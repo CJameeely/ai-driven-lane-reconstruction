@@ -1,0 +1,159 @@
+{
+  "口径": {
+    "空洞.area_share_percent": "AI估计值：analysis.json 的 damage.brick_walls_pct（砖墙损失面积占比）",
+    "痕迹.available_value": "AI估计值：analysis.json 仅提供痕迹数量，不是面积占比",
+    "其他area_share_percent": "源数据没有对应面积测量，写null"
+  },
+  "houses": [
+    {
+      "house_id": "R02_W_01",
+      "levels": {
+        "痕迹": {
+          "area_share_percent": null,
+          "available_value": 0,
+          "available_value_unit": "count"
+        },
+        "焦黑": {
+          "area_share_percent": null
+        },
+        "空洞": {
+          "area_share_percent": 77.2
+        },
+        "灰烬": {
+          "area_share_percent": null
+        },
+        "烟": {
+          "area_share_percent": null
+        },
+        "余烬": {
+          "area_share_percent": null
+        }
+      }
+    },
+    {
+      "house_id": "R02_W_02",
+      "levels": {
+        "痕迹": {
+          "area_share_percent": null,
+          "available_value": 0,
+          "available_value_unit": "count"
+        },
+        "焦黑": {
+          "area_share_percent": null
+        },
+        "空洞": {
+          "area_share_percent": 74.2
+        },
+        "灰烬": {
+          "area_share_percent": null
+        },
+        "烟": {
+          "area_share_percent": null
+        },
+        "余烬": {
+          "area_share_percent": null
+        }
+      }
+    },
+    {
+      "house_id": "R02_W_03",
+      "levels": {
+        "痕迹": {
+          "area_share_percent": null,
+          "available_value": 0,
+          "available_value_unit": "count"
+        },
+        "焦黑": {
+          "area_share_percent": null
+        },
+        "空洞": {
+          "area_share_percent": 68.7
+        },
+        "灰烬": {
+          "area_share_percent": null
+        },
+        "烟": {
+          "area_share_percent": null
+        },
+        "余烬": {
+          "area_share_percent": null
+        }
+      }
+    },
+    {
+      "house_id": "R02_E_01",
+      "levels": {
+        "痕迹": {
+          "area_share_percent": null,
+          "available_value": 0,
+          "available_value_unit": "count"
+        },
+        "焦黑": {
+          "area_share_percent": null
+        },
+        "空洞": {
+          "area_share_percent": 60.8
+        },
+        "灰烬": {
+          "area_share_percent": null
+        },
+        "烟": {
+          "area_share_percent": null
+        },
+        "余烬": {
+          "area_share_percent": null
+        }
+      }
+    },
+    {
+      "house_id": "R02_E_02",
+      "levels": {
+        "痕迹": {
+          "area_share_percent": null,
+          "available_value": 0,
+          "available_value_unit": "count"
+        },
+        "焦黑": {
+          "area_share_percent": null
+        },
+        "空洞": {
+          "area_share_percent": 55.8
+        },
+        "灰烬": {
+          "area_share_percent": null
+        },
+        "烟": {
+          "area_share_percent": null
+        },
+        "余烬": {
+          "area_share_percent": null
+        }
+      }
+    },
+    {
+      "house_id": "R02_E_03",
+      "levels": {
+        "痕迹": {
+          "area_share_percent": null,
+          "available_value": 0,
+          "available_value_unit": "count"
+        },
+        "焦黑": {
+          "area_share_percent": null
+        },
+        "空洞": {
+          "area_share_percent": 50.0
+        },
+        "灰烬": {
+          "area_share_percent": null
+        },
+        "烟": {
+          "area_share_percent": null
+        },
+        "余烬": {
+          "area_share_percent": null
+        }
+      }
+    }
+  ]
+}

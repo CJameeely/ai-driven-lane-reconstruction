@@ -1,0 +1,19 @@
+{
+  "house_id": "R02_E_02",
+  "grammar": "ban",
+  "classification": "作者设定",
+  "source": "web/forming.json panels",
+  "counts": {
+    "inner_membrane": 12,
+    "module": 418,
+    "perforation": 418,
+    "tube": 64,
+    "window": 4
+  },
+  "coverage_percent": 100.0,
+  "coverage_basis": "裁切后填充系统包络面积/扣除门窗洞的缺失区域面积；砌体灰缝计入砌体填充系统",
+  "outside_shell_area_m2": 0.0,
+  "birth_delay_steps": 10,
+  "passed": true,
+  "seconds": 0.332
+}

@@ -1,0 +1,49 @@
+{
+  "口径": {
+    "all_fields": "作者设定：三套grammar_v2.json"
+  },
+  "grammars": [
+    {
+      "grammar": "almond",
+      "name": "almond_blossom",
+      "parameters": {
+        "twist": 0.3,
+        "seg": 0.4,
+        "radius": 1.6,
+        "spread": 0.06,
+        "dz": 0.3,
+        "pipe_radius": 0.02
+      },
+      "junction": "缠绕",
+      "reference_image": "almond.jpg"
+    },
+    {
+      "grammar": "ban",
+      "name": "ban_cardboard_cathedral",
+      "parameters": {
+        "twist": 0.02,
+        "seg": 0.3,
+        "radius": 2.6,
+        "spread": -0.03,
+        "dz": 0.45,
+        "pipe_radius": 0.045
+      },
+      "junction": "留缝",
+      "reference_image": "ban.jpg"
+    },
+    {
+      "grammar": "shikumen",
+      "name": "shikumen_lane_gate",
+      "parameters": {
+        "twist": 0.05,
+        "seg": 0.7,
+        "radius": 2.5,
+        "spread": -0.02,
+        "dz": 0.25,
+        "pipe_radius": 0.02
+      },
+      "junction": "贴合",
+      "reference_image": "shikumen.jpg"
+    }
+  ]
+}

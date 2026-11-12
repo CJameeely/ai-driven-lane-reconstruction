@@ -1,0 +1,55 @@
+{
+  "口径": {
+    "combined_basis": "组合口径：推断和想象来自新骨架覆盖率（模型导出值），证据来自analysis.json的残墙面积（AI估计值）",
+    "evidence": "AI估计值：analysis.json四面外墙remaining_m2之和",
+    "inference": "模型导出值：缺失区域面积减去该语法覆盖面积",
+    "imagination": "模型导出值：缺失区域面积乘以该语法coverage_percent",
+    "share_denominator": "证据面积加缺失区域面积；三层互斥并归一到100%"
+  },
+  "house_id": "R02_W_02",
+  "normalization_area_m2": 229.3668,
+  "variants": [
+    {
+      "grammar": "almond",
+      "areas_m2": {
+        "evidence": 48.78,
+        "inference": 2.1688,
+        "imagination": 178.418
+      },
+      "shares_percent": {
+        "evidence": 21.267,
+        "inference": 0.946,
+        "imagination": 77.787
+      },
+      "coverage_basis": "各缺失面内距骨架不超过0.3m面积占比的最小值"
+    },
+    {
+      "grammar": "ban",
+      "areas_m2": {
+        "evidence": 48.78,
+        "inference": 16.6411,
+        "imagination": 163.9457
+      },
+      "shares_percent": {
+        "evidence": 21.267,
+        "inference": 7.255,
+        "imagination": 71.478
+      },
+      "coverage_basis": "module_center记录面积之和除以缺失区域总面积，上限100%"
+    },
+    {
+      "grammar": "shikumen",
+      "areas_m2": {
+        "evidence": 48.78,
+        "inference": 70.1833,
+        "imagination": 110.4035
+      },
+      "shares_percent": {
+        "evidence": 21.267,
+        "inference": 30.599,
+        "imagination": 48.134
+      },
+      "coverage_basis": "module_center记录面积之和除以缺失区域总面积，上限100%"
+    }
+  ]
+}

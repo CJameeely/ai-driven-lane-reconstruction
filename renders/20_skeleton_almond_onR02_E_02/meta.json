@@ -1,0 +1,55 @@
+{
+  "grammar": "almond",
+  "house_id": "R02_E_02",
+  "total_points": 212256,
+  "counts": {
+    "branch": 69047,
+    "outline": 2512,
+    "module_center": 69138
+  },
+  "bounds_m": [
+    0.0,
+    3.8,
+    0.0,
+    12.08,
+    0.0,
+    8.5288
+  ],
+  "shell_dims_m": [
+    3.8,
+    12.08
+  ],
+  "generation_seconds": 42.83943486213684,
+  "csv_sampling": "line elements store vertices only; web densifies at 0.01–0.015 m",
+  "acceptance": {
+    "passed": true,
+    "shell_error_m": [
+      0,
+      0
+    ],
+    "region_coverage_0p3m": {
+      "front": 0.9999999999999998,
+      "back": 0.9999733833897265,
+      "left_courtyard": 1.0,
+      "left_main": 0.9999999999999991,
+      "left_rear": 0.9999999999999993,
+      "right_courtyard": 1.0,
+      "right_main": 0.9999999999999987,
+      "right_rear": 0.9999999999999999,
+      "roof_front": 1.0,
+      "roof_back": 1.0,
+      "rear_terrace": 1.0,
+      "main_front": 0.980543809953751
+    },
+    "min_region_coverage": 0.980543809953751,
+    "birth_distance_correlation": 0.9999767011888782,
+    "birth_distance_threshold": 0.9,
+    "line_birth_monotonic": true,
+    "almond_child_not_before_branch": true
+  },
+  "status": "正式",
+  "baseline_status": "正式批量结果",
+  "birth_method": "house-wide surface distance from nearest break/eave, normalized 0–150; roof continues from wall-top distance",
+  "birth_normalization_max_surface_m": 10.183387983459228,
+  "birth_updated_at": "2026-11-09T19:56:44"
+}

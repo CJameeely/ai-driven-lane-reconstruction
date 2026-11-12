@@ -1,0 +1,11 @@
+{
+  "source": "/Users/cj/Desktop/灾后重建/visualization_matrix/2026-11-09/camera_vis.json",
+  "projection": "parallel",
+  "view": "isometric_45deg",
+  "location": [-14.0, -14.0, 13.0],
+  "target": [1.9, 6.04, 4.25],
+  "up": [0.0, 0.0, 1.0],
+  "image_px": [1200, 1200],
+  "background": "#000000",
+  "framing": "zoom_extents_then_0.88_scale_margin"
+}

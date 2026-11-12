@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>语法骨架生长</title>
+  <style>
+    :root{color-scheme:dark;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif}
+    *{box-sizing:border-box}html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#000;color:#eef0f2}canvas{display:block}
+    #loading{position:fixed;inset:0;display:grid;place-items:center;background:#000;color:#9db0c4;font-size:12px;letter-spacing:.12em;z-index:9}#loading.done{display:none}
+    .panel{position:fixed;z-index:4;background:rgba(5,7,9,.62);border:1px solid rgba(157,176,196,.2);backdrop-filter:blur(8px)}
+    #grammars{left:24px;bottom:72px;padding:9px;display:flex;gap:5px}.g,.view{appearance:none;border:0;background:transparent;color:#6a6c6e;padding:7px 10px;cursor:pointer;font-size:12px}.g.on,.view.on{color:#c9ddf2;background:rgba(157,176,196,.12)}
+    #views{top:22px;right:22px;padding:6px}#views .view{display:block;width:62px;text-align:left}
+    #timeline{left:24px;right:24px;bottom:20px;height:38px;display:grid;grid-template-columns:42px 1fr 48px;align-items:center;padding:0 12px;gap:10px}
+    #play{border:0;background:transparent;color:#c9ddf2;font-size:15px;cursor:pointer}input[type=range]{width:100%;accent-color:#9db0c4}#time{font:11px ui-monospace,monospace;color:#9db0c4;text-align:right}
+    #molecule{right:24px;bottom:72px;width:152px;height:174px;padding:10px}#mol{width:130px;height:130px}#molLabel{font-size:11px;color:#9db0c4;text-align:center;margin-top:-3px}
+    #legend{left:24px;top:22px;padding:10px 12px;color:#9db0c4;font-size:10px;line-height:1.6}.sw{display:inline-block;width:6px;height:6px;border-radius:50%;margin-right:6px;background:#c9ddf2;box-shadow:0 0 7px #c9ddf2}
+    #status{position:fixed;left:24px;top:92px;color:#6a6c6e;font:10px ui-monospace,monospace;z-index:4;max-width:360px}
+    body.ui-hidden #loading,body.ui-hidden #legend,body.ui-hidden #status,body.ui-hidden #views,body.ui-hidden #grammars,body.ui-hidden #molecule,body.ui-hidden #timeline{display:none!important}
+    @media(max-width:700px){#molecule{display:none}#views{top:12px;right:12px}#legend{left:12px;top:12px}#grammars{left:12px;bottom:64px}#timeline{left:12px;right:12px;bottom:12px}}
+  </style>
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+</head>
+<body>
+  <div id="loading">读取语法骨架</div>
+  <div id="legend" class="panel"><span class="sw"></span>语法骨架<br>分子来自参数，组合规则为作者设定</div>
+  <div id="status"></div>
+  <div id="views" class="panel"><button class="view" data-view="hero">展示机位</button><button class="view" data-view="city">城市总览</button><button class="view" data-view="V1">第一人称</button><button class="view" data-view="free">自由</button></div>
+  <div id="grammars" class="panel"><button class="g" data-g="almond">杏花</button><button class="g" data-g="ban">纸管</button><button class="g" data-g="shikumen">石库门</button></div>
+  <div id="molecule" class="panel"><canvas id="mol" width="260" height="260"></canvas><div id="molLabel"></div></div>
+  <div id="timeline" class="panel"><button id="play">▶</button><input id="scrub" type="range" min="0" max="1" step="0.001"><div id="time"></div></div>
+  <script type="module" src="growth.js"></script>
+</body>
+</html>

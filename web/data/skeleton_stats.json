@@ -1,0 +1,281 @@
+{
+  "口径": {
+    "missing_area_m2": "模型导出值：完整三段外壳沿各面断口切开后的缺失面面积总和",
+    "skeleton_length_m": "模型导出值：skeleton.obj全部l线段的三维长度总和",
+    "element_count": "模型导出值：meta.json counts各类型加总",
+    "point_count": "模型导出值：meta.json total_points，即CSV顶点记录数",
+    "coverage_percent": "模型导出值；具体计算见每条coverage_basis"
+  },
+  "records": [
+    {
+      "house_id": "R02_W_01",
+      "grammar": "almond",
+      "missing_area_m2": 269.3748,
+      "skeleton_length_m": 15870.148,
+      "element_count": 293839,
+      "element_count_by_type": {
+        "branch": 145298,
+        "outline": 3120,
+        "module_center": 145421
+      },
+      "point_count": 442257,
+      "coverage_percent": 99.999,
+      "coverage_basis": "各缺失面内距骨架不超过0.3m面积占比的最小值"
+    },
+    {
+      "house_id": "R02_W_01",
+      "grammar": "ban",
+      "missing_area_m2": 269.3748,
+      "skeleton_length_m": 2113.224,
+      "element_count": 10297,
+      "element_count_by_type": {
+        "module_edge": 9201,
+        "module_center": 1096
+      },
+      "point_count": 19498,
+      "coverage_percent": 92.968,
+      "coverage_basis": "module_center记录面积之和除以缺失区域总面积，上限100%"
+    },
+    {
+      "house_id": "R02_W_01",
+      "grammar": "shikumen",
+      "missing_area_m2": 269.3748,
+      "skeleton_length_m": 8895.202,
+      "element_count": 84010,
+      "element_count_by_type": {
+        "brick_edge": 67594,
+        "module_center": 16361,
+        "roof_tile": 54,
+        "trim": 1
+      },
+      "point_count": 151659,
+      "coverage_percent": 56.11,
+      "coverage_basis": "module_center记录面积之和除以缺失区域总面积，上限100%"
+    },
+    {
+      "house_id": "R02_W_02",
+      "grammar": "almond",
+      "missing_area_m2": 180.5868,
+      "skeleton_length_m": 8385.91,
+      "element_count": 180962,
+      "element_count_by_type": {
+        "branch": 89179,
+        "outline": 2508,
+        "module_center": 89275
+      },
+      "point_count": 272649,
+      "coverage_percent": 98.799,
+      "coverage_basis": "各缺失面内距骨架不超过0.3m面积占比的最小值"
+    },
+    {
+      "house_id": "R02_W_02",
+      "grammar": "ban",
+      "missing_area_m2": 180.5868,
+      "skeleton_length_m": 1632.873,
+      "element_count": 8770,
+      "element_count_by_type": {
+        "module_edge": 7772,
+        "module_center": 998
+      },
+      "point_count": 16542,
+      "coverage_percent": 90.785,
+      "coverage_basis": "module_center记录面积之和除以缺失区域总面积，上限100%"
+    },
+    {
+      "house_id": "R02_W_02",
+      "grammar": "shikumen",
+      "missing_area_m2": 180.5868,
+      "skeleton_length_m": 6413.497,
+      "element_count": 62018,
+      "element_count_by_type": {
+        "brick_edge": 49927,
+        "module_center": 12036,
+        "roof_tile": 54,
+        "trim": 1
+      },
+      "point_count": 112000,
+      "coverage_percent": 61.136,
+      "coverage_basis": "module_center记录面积之和除以缺失区域总面积，上限100%"
+    },
+    {
+      "house_id": "R02_W_03",
+      "grammar": "almond",
+      "missing_area_m2": 170.4263,
+      "skeleton_length_m": 8727.876,
+      "element_count": 186250,
+      "element_count_by_type": {
+        "branch": 91825,
+        "outline": 2505,
+        "module_center": 91920
+      },
+      "point_count": 280580,
+      "coverage_percent": 99.131,
+      "coverage_basis": "各缺失面内距骨架不超过0.3m面积占比的最小值"
+    },
+    {
+      "house_id": "R02_W_03",
+      "grammar": "ban",
+      "missing_area_m2": 170.4263,
+      "skeleton_length_m": 1523.332,
+      "element_count": 8056,
+      "element_count_by_type": {
+        "module_edge": 7142,
+        "module_center": 914
+      },
+      "point_count": 15198,
+      "coverage_percent": 90.962,
+      "coverage_basis": "module_center记录面积之和除以缺失区域总面积，上限100%"
+    },
+    {
+      "house_id": "R02_W_03",
+      "grammar": "shikumen",
+      "missing_area_m2": 170.4263,
+      "skeleton_length_m": 5982.405,
+      "element_count": 57934,
+      "element_count_by_type": {
+        "brick_edge": 46650,
+        "module_center": 11229,
+        "roof_tile": 54,
+        "trim": 1
+      },
+      "point_count": 104639,
+      "coverage_percent": 60.221,
+      "coverage_basis": "module_center记录面积之和除以缺失区域总面积，上限100%"
+    },
+    {
+      "house_id": "R02_E_01",
+      "grammar": "almond",
+      "missing_area_m2": 232.9467,
+      "skeleton_length_m": 12596.578,
+      "element_count": 233017,
+      "element_count_by_type": {
+        "branch": 114903,
+        "outline": 3088,
+        "module_center": 115026
+      },
+      "point_count": 351008,
+      "coverage_percent": 99.985,
+      "coverage_basis": "各缺失面内距骨架不超过0.3m面积占比的最小值"
+    },
+    {
+      "house_id": "R02_E_01",
+      "grammar": "ban",
+      "missing_area_m2": 232.9467,
+      "skeleton_length_m": 1844.459,
+      "element_count": 9132,
+      "element_count_by_type": {
+        "module_edge": 8175,
+        "module_center": 957
+      },
+      "point_count": 17307,
+      "coverage_percent": 93.05,
+      "coverage_basis": "module_center记录面积之和除以缺失区域总面积，上限100%"
+    },
+    {
+      "house_id": "R02_E_01",
+      "grammar": "shikumen",
+      "missing_area_m2": 232.9467,
+      "skeleton_length_m": 7341.786,
+      "element_count": 69562,
+      "element_count_by_type": {
+        "brick_edge": 56006,
+        "module_center": 13501,
+        "roof_tile": 54,
+        "trim": 1
+      },
+      "point_count": 125623,
+      "coverage_percent": 52.836,
+      "coverage_basis": "module_center记录面积之和除以缺失区域总面积，上限100%"
+    },
+    {
+      "house_id": "R02_E_02",
+      "grammar": "almond",
+      "missing_area_m2": 147.486,
+      "skeleton_length_m": 6812.26,
+      "element_count": 140697,
+      "element_count_by_type": {
+        "branch": 69047,
+        "outline": 2512,
+        "module_center": 69138
+      },
+      "point_count": 212256,
+      "coverage_percent": 98.054,
+      "coverage_basis": "各缺失面内距骨架不超过0.3m面积占比的最小值"
+    },
+    {
+      "house_id": "R02_E_02",
+      "grammar": "ban",
+      "missing_area_m2": 147.486,
+      "skeleton_length_m": 1325.53,
+      "element_count": 7459,
+      "element_count_by_type": {
+        "module_edge": 6668,
+        "module_center": 791
+      },
+      "point_count": 14127,
+      "coverage_percent": 91.777,
+      "coverage_basis": "module_center记录面积之和除以缺失区域总面积，上限100%"
+    },
+    {
+      "house_id": "R02_E_02",
+      "grammar": "shikumen",
+      "missing_area_m2": 147.486,
+      "skeleton_length_m": 5001.712,
+      "element_count": 48636,
+      "element_count_by_type": {
+        "brick_edge": 39214,
+        "module_center": 9367,
+        "roof_tile": 54,
+        "trim": 1
+      },
+      "point_count": 87905,
+      "coverage_percent": 57.642,
+      "coverage_basis": "module_center记录面积之和除以缺失区域总面积，上限100%"
+    },
+    {
+      "house_id": "R02_E_03",
+      "grammar": "almond",
+      "missing_area_m2": 137.4884,
+      "skeleton_length_m": 6536.083,
+      "element_count": 136717,
+      "element_count_by_type": {
+        "branch": 67059,
+        "outline": 2512,
+        "module_center": 67146
+      },
+      "point_count": 206288,
+      "coverage_percent": 98.738,
+      "coverage_basis": "各缺失面内距骨架不超过0.3m面积占比的最小值"
+    },
+    {
+      "house_id": "R02_E_03",
+      "grammar": "ban",
+      "missing_area_m2": 137.4884,
+      "skeleton_length_m": 1246.232,
+      "element_count": 7244,
+      "element_count_by_type": {
+        "module_edge": 6492,
+        "module_center": 752
+      },
+      "point_count": 13736,
+      "coverage_percent": 91.69,
+      "coverage_basis": "module_center记录面积之和除以缺失区域总面积，上限100%"
+    },
+    {
+      "house_id": "R02_E_03",
+      "grammar": "shikumen",
+      "missing_area_m2": 137.4884,
+      "skeleton_length_m": 4575.168,
+      "element_count": 44250,
+      "element_count_by_type": {
+        "brick_edge": 35692,
+        "module_center": 8503,
+        "roof_tile": 54,
+        "trim": 1
+      },
+      "point_count": 79997,
+      "coverage_percent": 56.35,
+      "coverage_basis": "module_center记录面积之和除以缺失区域总面积，上限100%"
+    }
+  ]
+}
