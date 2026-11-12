@@ -210,17 +210,22 @@
       <p class="label">08 / Results</p>
       <h2 id="resultsTitle">Reconstructed lane</h2>
     </div>
-    <figure class="card media hero-result">
-      <img src="system_assets/results_city.jpg" width="2000" height="1000" loading="lazy" alt="The reconstructed lane returned to the city block: the six repaired houses sit between intact neighbours and streets.">
-      <figcaption class="mono">COMMUNITY_05 • RECONSTRUCTED CITY • FINAL VISUALIZATION</figcaption>
-    </figure>
-    <dl class="results" id="resultReadouts"></dl>
-    <div class="action-row">
-      <button class="pill" type="button" id="beforeAfter">View before / after</button>
-      <a class="pill" href="experience.html?tour=1">Enter digital space</a>
-      <button class="pill" type="button" id="playFull">Play full film</button>
+    <div class="results-grid">
+      <figure class="card media results-figure">
+        <img id="resultsImage" src="system_assets/results_city_ban.jpg" width="1600" height="1000" loading="lazy" alt="The reconstructed lane in its city block, repaired with the selected grammar.">
+        <figcaption class="mono" id="resultsCaption">COMMUNITY_05 • RECONSTRUCTED CITY • STAGE 08 CAPTURE</figcaption>
+      </figure>
+      <div class="card panel results-panel">
+        <p class="complete mono" aria-live="polite"><i class="dot" aria-hidden="true"></i>RECONSTRUCTION COMPLETE • 6 / 6 UNITS</p>
+        <dl class="results" id="resultReadouts"></dl>
+        <div class="results-actions">
+          <button class="pill" type="button" id="beforeAfter">View before / after</button>
+          <a class="pill" href="experience.html?tour=1">Enter digital space</a>
+          <button class="pill" type="button" id="playFull">Play full film</button>
+        </div>
+        <p class="mono coming">EXPORT IMAGE • EXPORT MODEL • EXPORT REPORT • COMING SOON</p>
+      </div>
     </div>
-    <p class="mono coming">EXPORT IMAGE • EXPORT MODEL • EXPORT REPORT • COMING SOON</p>
   </div>
 </section>
 </main>

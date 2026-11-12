@@ -49,6 +49,7 @@ function load() {
   let s;
   try { s = JSON.parse(localStorage.getItem('rebuild-system-v2') || 'null'); } catch { s = null; }
   s = { ...DEFAULT, ...(s || {}) };
+  if (GRAMMARS[Q.get('g')]) s.grammar = Q.get('g');        // ?g=almond|ban|shikumen selects a grammar on load
   if (!GRAMMARS[s.grammar]) s.grammar = 'ban';
   return s;
 }
@@ -329,7 +330,11 @@ function select(g) {
 
 // ---------------------------------------------------------------- results
 function renderResults() {
-  const v = voidShare(), p = layer(S.grammar), st = stat(S.grammar);
+  const v = voidShare(), p = layer(S.grammar), st = stat(S.grammar), o = GRAMMARS[S.grammar];
+  const img = $('#resultsImage');
+  img.src = `system_assets/results_city_${S.grammar}.jpg`;
+  img.alt = `The reconstructed lane in its city block, repaired with ${o.title} (${o.subtitle.toLowerCase()}).`;
+  $('#resultsCaption').textContent = `COMMUNITY_05 • ${o.title.toUpperCase()} • STAGE 08 CAPTURE`;
   $('#resultReadouts').innerHTML = [
     readout('Selected grammar', `${GRAMMARS[S.grammar].title} / ${GRAMMARS[S.grammar].subtitle}`, '', 'AUTHOR SELECTION'),
     readout('Retained structure', v == null ? null : fmt(100 - v), '%', 'AI ESTIMATE'),
