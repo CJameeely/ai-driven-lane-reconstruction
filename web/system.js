@@ -10,28 +10,28 @@ const GRAMMARS = {
   almond: {
     title: 'Almond', subtitle: 'Organic Gothic', img: 'system_assets/option_almond.jpg',
     text: 'Trunks rise from the broken walls and branch into Gothic ribs, closed by thin membranes.',
-    system: 'Trunk • branch • node • membrane',
+    system: 'Built from trunks, branches, nodes and membranes.',
     alt: 'Almond repair: branching ribs and membranes grow from the residual walls of the burned row.',
   },
   ban: {
     title: 'Ban', subtitle: 'Folded tectonic', img: 'system_assets/option_ban.jpg',
     text: 'Paper tubes and folded modules assemble a light frame inside the missing envelope.',
-    system: 'Tube • folded module • perforation • inner membrane',
+    system: 'Built from paper tubes, folded modules, perforations and an inner membrane.',
     alt: 'Ban repair: paper tubes and folded perforated modules fill the missing walls and roofs.',
   },
   shikumen: {
     title: 'Shikumen', subtitle: 'Reconstructed masonry', img: 'system_assets/option_shikumen.jpg',
     text: 'Brick, tile and stone trim rebuild the lost masonry in the language of the lane.',
-    system: 'Brick • tile • trim • seam • openings',
+    system: 'Built from brick, tile, trim, seams and openings.',
     alt: 'Shikumen repair: brick courses, roof tiles and trims rebuild the missing masonry.',
   },
 };
 const FLOW = [
-  { n: '01', name: 'Input', text: 'Evidence of the ruin and a style reference enter the system.', img: 'system_assets/stage01_fire.jpg', alt: 'Thermal point cloud of the fire inside the damaged lane.', data: () => '2 INPUT SLOTS • RUIN + REFERENCE' },
-  { n: '02', name: 'Detect', text: 'Residual walls, fractures and voids are measured.', img: 'system_assets/stage02_damage.jpg', alt: 'Damage scan passing over the broken walls.', data: () => `VOID ${fmt(voidShare())}% • ${HOUSE}` },
-  { n: '03', name: 'Infer', text: 'Typology rebuilds the missing envelope as a target skeleton.', img: 'system_assets/stage03_inference.jpg', alt: 'Target skeleton drawn over the residual walls.', data: () => `EVIDENCE ${fmt(layer('ban')?.evidence)}%` },
-  { n: '04', name: 'Generate', text: 'Three grammars repair the same ruin in comparable form.', img: 'system_assets/option_ban.jpg', alt: 'Ban repair of the burned row.', data: () => '3 GRAMMARS • 18 DATASETS' },
-  { n: '05', name: 'Explore', text: 'The repaired lane returns to the city as a navigable space.', img: 'system_assets/stage08_drone_low.jpg', alt: 'Low drone view of the reconstructed lane in the city.', data: () => '08 STAGES • DIGITAL SPACE' },
+  { n: '1', name: 'Input', text: 'Evidence of the ruin and a style reference enter the system.', img: 'system_assets/stage01_fire.jpg', alt: 'Thermal point cloud of the fire inside the damaged lane.', data: () => 'Two inputs: the ruin and a style reference.' },
+  { n: '2', name: 'Detect', text: 'Residual walls, fractures and voids are measured.', img: 'system_assets/stage02_damage.jpg', alt: 'Damage scan passing over the broken walls.', data: () => `Void ratio of house ${HOUSE}: ${fmt(voidShare())}%.` },
+  { n: '3', name: 'Infer', text: 'Typology rebuilds the missing envelope as a target skeleton.', img: 'system_assets/stage03_inference.jpg', alt: 'Target skeleton drawn over the residual walls.', data: () => `Evidence share for Ban: ${fmt(layer('ban')?.evidence)}%.` },
+  { n: '4', name: 'Generate', text: 'Three grammars repair the same ruin in comparable form.', img: 'system_assets/option_ban.jpg', alt: 'Ban repair of the burned row.', data: () => 'Three grammars across 18 datasets.' },
+  { n: '5', name: 'Explore', text: 'The repaired lane returns to the city as a navigable space.', img: 'system_assets/stage08_drone_low.jpg', alt: 'Low drone view of the reconstructed lane in the city.', data: () => 'Eight stages in one digital space.' },
 ];
 const PIPE = [
   ['Damage detection', 'AI ESTIMATE'], ['Residual wall segmentation', 'MODEL EXPORT'], ['Crack and trace reading', 'AI ESTIMATE'],
@@ -83,14 +83,14 @@ function renderFlow() {
         <span class="badge">${f.n}</span>
         <h3>${f.name}</h3>
         <p class="prose">${f.text}</p>
-        <p class="mono meta">${f.data()}</p>
+        <p class="line meta">${f.data()}</p>
       </div>
     </article>`).join('');
 }
 
 // ---------------------------------------------------------------- input
 const ACCEPT = { evidence: 'image/*,.pdf,.obj,.ply,.las', intent: 'image/*,.pdf' };
-const FORMATS = { evidence: 'JPG • PNG • PDF • OBJ • PLY • LAS • MAX 50 MB', intent: 'JPG • PNG • PDF • MAX 20 MB' };
+const FORMATS = { evidence: 'JPG, PNG, PDF, OBJ, PLY or LAS, up to 50 MB.', intent: 'JPG, PNG or PDF, up to 20 MB.' };
 const LIMIT = { evidence: 50, intent: 20 };
 const bytes = (n) => (n == null ? '—' : n > 1048576 ? (n / 1048576).toFixed(1) + ' MB' : Math.max(1, Math.round(n / 1024)) + ' KB');
 
@@ -102,7 +102,7 @@ function renderSlot(kind) {
       <label class="drop" for="${id}">
         <svg class="icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 28V10M12 18l8-8 8 8M8 30h24"/></svg>
         <span class="drop-title">Choose or drop a file</span>
-        <span class="mono">${FORMATS[kind]}</span>
+        <span class="line">${FORMATS[kind]}</span>
       </label>
       <input class="visually-hidden" type="file" id="${id}" accept="${ACCEPT[kind]}" data-kind="${kind}">`;
   } else {
@@ -112,7 +112,7 @@ function renderSlot(kind) {
         ${src ? `<img src="${src}" alt="Preview of ${f.name}">` : `<div class="file-ph mono" aria-hidden="true">${(f.name.split('.').pop() || 'FILE').toUpperCase()}</div>`}
         <div class="file-meta">
           <p class="file-name">${f.name}</p>
-          <p class="mono">${bytes(f.size)} • <span class="ready"><i class="dot" aria-hidden="true"></i>FILE READY</span>${f.demo ? ' • DEMONSTRATION' : ''}</p>
+          <p class="line">${bytes(f.size)}, <span class="ready">ready</span>${f.demo ? ', from the demonstration dataset' : ''}.</p>
           <div class="file-actions">
             <label class="pill quiet" for="${id}">Replace</label>
             <input class="visually-hidden" type="file" id="${id}" accept="${ACCEPT[kind]}" data-kind="${kind}">
@@ -125,7 +125,7 @@ function renderSlot(kind) {
   input.onchange = () => {
     const file = input.files[0];
     if (!file) return;
-    if (file.size > LIMIT[kind] * 1048576) { status(`FILE TOO LARGE • LIMIT ${LIMIT[kind]} MB`); return; }
+    if (file.size > LIMIT[kind] * 1048576) { status(`File too large. The limit is ${LIMIT[kind]} MB.`); return; }
     if (thumbs[kind]) URL.revokeObjectURL(thumbs[kind]);
     thumbs[kind] = file.type.startsWith('image/') ? URL.createObjectURL(file) : null;
     S[kind] = { name: file.name, size: file.size, demo: false };
@@ -155,8 +155,8 @@ function status(t) { $('#uploadStatus').textContent = t; }
 function refreshInput() {
   const both = !!(S.evidence && S.intent);
   $('#analyze').disabled = !both;
-  if (both) status(S.evidence.demo && S.intent.demo ? 'DEMONSTRATION DATASET LOADED • READY' : 'TWO INPUTS READY • PREVIEW ONLY, NOT UPLOADED');
-  else status(`WAITING FOR ${!S.evidence && !S.intent ? 'TWO INPUTS' : !S.evidence ? 'DAMAGED BUILDING' : 'STYLE REFERENCE'}`);
+  if (both) status(S.evidence.demo && S.intent.demo ? 'Demonstration dataset loaded and ready.' : 'Both inputs are ready. They are previewed here only, not uploaded.');
+  else status(`Waiting for ${!S.evidence && !S.intent ? 'two inputs' : !S.evidence ? 'the damaged building' : 'the style reference'}.`);
 }
 const fileSize = async (u) => { try { const r = await fetch(u); return (await r.blob()).size; } catch { return null; } };
 async function demoFile(kind, grammar = S.grammar) {
@@ -179,7 +179,7 @@ const wait = (ms) => new Promise((res, rej) => { guide.timer = setTimeout(() => 
 const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 function caption(step, title, text) {
   guide.step = step;
-  $('#guideStep').textContent = `${String(step).padStart(2, '0')} / ${String(GUIDE_STEPS).padStart(2, '0')}`;
+  $('#guideStep').textContent = `Step ${step} of ${GUIDE_STEPS}`;
   $('#guideTitle').textContent = title;
   $('#guideText').textContent = text;
   $('#guideProgress').style.transform = `scaleX(${step / GUIDE_STEPS})`;
@@ -199,6 +199,7 @@ async function runGuide() {
   if (guide.on) return;
   guide.on = true;
   document.body.classList.add('guiding');
+  if (!(await demoNotice())) { stopGuide(); return; }
   $('#guide').hidden = false;
   $('#guideStop').focus();
   try {
@@ -233,12 +234,29 @@ async function runGuide() {
     caption(7, 'Review results', 'Retained structure, rebuilt area and source shares for the selected grammar.');
     point(null); await show('results'); await wait(2800);
 
-    caption(8, 'Enter the digital space', 'Opening the eight-stage reconstruction: 01 Fire to 08 Reconstructed city. It plays automatically.');
+    caption(8, 'Enter the digital space', 'Opening the eight-stage reconstruction, from 1 Fire to 8 Reconstructed city. It plays automatically.');
     await show('reconstruction', 600);
     point($('#enterSpace'), true);
-    for (let n = 3; n > 0; n--) { $('#guideText').textContent = `Opening stages 01 to 08 in ${n}…`; await wait(1000); }
-    location.href = `experience.html?tour=1&g=${GUIDE_GRAMMAR}`;
+    for (let n = 3; n > 0; n--) { $('#guideText').textContent = `Opening stages 1 to 8 in ${n}…`; await wait(1000); }
+    location.href = `experience.html?tour=1&guide=1&g=${GUIDE_GRAMMAR}`;
   } catch { /* stopped */ }
+}
+// Centered notice before the walkthrough: closes after 4 s, on "Got it" or on any key.
+// Resolves true to start the demo, false when Esc was pressed (exit).
+function demoNotice() {
+  const box = $('#demoNotice'), ok = $('#noticeOk');
+  return new Promise((resolve) => {
+    let t = null;
+    const close = (go) => {
+      clearTimeout(t); document.removeEventListener('keydown', onKey, true);
+      box.hidden = true; resolve(go && guide.on);
+    };
+    const onKey = (e) => { e.preventDefault(); e.stopPropagation(); close(e.key !== 'Escape'); };
+    box.hidden = false; ok.focus();
+    ok.onclick = () => close(true);
+    document.addEventListener('keydown', onKey, true);
+    t = setTimeout(() => close(true), 4000);
+  });
 }
 function stopGuide() {
   if (!guide.on) return;
@@ -266,9 +284,9 @@ function renderDamage() {
 function drawPipe() {
   $('#pipeline').innerHTML = PIPE.map(([name, src], i) => {
     const state = i < S.analysisDone ? 'done' : i === S.analysisDone && running ? 'active' : '';
-    return `<li class="${state}"><i class="dot" aria-hidden="true"></i><span>${name}</span><span class="mono">${state === 'done' ? 'DONE' : state === 'active' ? 'RUNNING' : 'QUEUED'} • ${src}</span></li>`;
+    return `<li class="${state}"><span>${name}</span><span class="line">${state === 'done' ? 'Done' : state === 'active' ? 'Running' : 'Queued'}, ${src === 'AI ESTIMATE' ? 'AI estimate' : 'model export'}</span></li>`;
   }).join('');
-  $('#analysisStatus').textContent = S.analysisDone >= PIPE.length ? 'SEQUENCE COMPLETE • DEMONSTRATION DATA' : running ? `RUNNING ${S.analysisDone + 1} / ${PIPE.length}` : 'SEQUENCE NOT RUN';
+  $('#analysisStatus').textContent = S.analysisDone >= PIPE.length ? 'Sequence complete on the demonstration data.' : running ? `Running step ${S.analysisDone + 1} of ${PIPE.length}.` : 'Sequence not run yet.';
 }
 let running = false, timer = null;
 function runAnalysis(then) {
@@ -285,7 +303,7 @@ function runAnalysis(then) {
 // ---------------------------------------------------------------- inference
 function renderInference() {
   const p = layer(S.grammar), st = stat(S.grammar);
-  $('#layerGrammar').textContent = S.grammar.toUpperCase();
+  $('#layerGrammar').textContent = GRAMMARS[S.grammar].title;
   const parts = [['evidence', 'Evidence', 'Surviving walls'], ['inference', 'Inference', 'Implied by typology'], ['imagination', 'Imagination', 'Invented by grammar']];
   if (!p) {
     $('#segments').innerHTML = '<p class="mono">PENDING</p>';
@@ -293,11 +311,11 @@ function renderInference() {
   } else {
     $('#segments').setAttribute('aria-label', parts.map(([k, n]) => `${n} ${fmt(p[k])} percent`).join(', '));
     $('#segments').innerHTML = parts.map(([k, n]) => `<span class="seg ${k}" style="flex-basis:${p[k]}%"><b class="mono">${fmt(p[k])}%</b><i aria-hidden="true"></i></span>`).join('');
-    $('#legend').innerHTML = parts.map(([k, n, d]) => `<div class="legend-row ${k}"><dt><i aria-hidden="true"></i>${n}</dt><dd class="mono">${fmt(p[k])}% • ${d.toUpperCase()}</dd></div>`).join('');
+    $('#legend').innerHTML = parts.map(([k, n, d]) => `<div class="legend-row ${k}"><dt><i aria-hidden="true"></i>${n}</dt><dd class="line">${fmt(p[k])}%, ${d.toLowerCase()}</dd></div>`).join('');
   }
   $('#inferenceReadouts').innerHTML = [
     readout('Confidence', null),
-    readout('Target model', st ? `${HOUSE}` : null, '', '6 / 6 TARGETS'),
+    readout('Target model', st ? `${HOUSE}` : null, '', '6 TARGETS'),
     readout('Reconstruction status', S.analysisDone >= PIPE.length ? 'Target model complete' : 'Awaiting sequence', '', 'DEMONSTRATION'),
   ].join('');
 }
@@ -307,12 +325,11 @@ function renderOptions() {
   $('#optionGrid').innerHTML = Object.entries(GRAMMARS).map(([g, o], i) => {
     const st = stat(g), on = S.grammar === g;
     return `<article class="card option${on ? ' selected' : ''}" aria-labelledby="opt-${g}">
-      <div class="option-head"><span class="badge">0${i + 1}</span>${on ? '<span class="selected-tag mono"><i class="dot" aria-hidden="true"></i>SELECTED</span>' : ''}</div>
+      <div class="option-head"><span class="badge">${i + 1}</span></div>
       <h3 id="opt-${g}">${o.title}<span>${o.subtitle}</span></h3>
       <img src="${o.img}" alt="${o.alt}" loading="lazy" width="1200" height="800">
-      <p class="prose">${o.text}</p>
+      <p class="prose">${o.text} ${o.system}</p>
       <dl class="mono">
-        <div><dt>CONSTRUCTION</dt><dd>${o.system.toUpperCase()}</dd></div>
         <div><dt>COVERAGE</dt><dd>${st ? fmt(st.coverage_percent) + '%' : 'PENDING'}</dd></div>
         <div><dt>SKELETON</dt><dd>${st ? Math.round(st.skeleton_length_m).toLocaleString('en-US') + ' M' : 'PENDING'}</dd></div>
       </dl>
@@ -324,7 +341,7 @@ function renderOptions() {
 function select(g) {
   S.grammar = g; save();
   renderOptions(); renderInference(); renderResults(); renderDamage();
-  $('#optionStatus').textContent = `SELECTED ${g.toUpperCase()} • ${GRAMMARS[g].subtitle.toUpperCase()}`;
+  $('#optionStatus').textContent = `${GRAMMARS[g].title} (${GRAMMARS[g].subtitle.toLowerCase()}) selected.`;
   $(`[data-grammar="${g}"]`)?.focus();
 }
 
@@ -334,9 +351,9 @@ function renderResults() {
   const img = $('#resultsImage');
   img.src = `system_assets/results_city_${S.grammar}.jpg`;
   img.alt = `The reconstructed lane in its city block, repaired with ${o.title} (${o.subtitle.toLowerCase()}).`;
-  $('#resultsCaption').textContent = `COMMUNITY_05 • ${o.title.toUpperCase()} • STAGE 08 CAPTURE`;
+  $('#resultsCaption').textContent = `The reconstructed city repaired with ${o.title}, captured at stage 8.`;
   $('#resultReadouts').innerHTML = [
-    readout('Selected grammar', `${GRAMMARS[S.grammar].title} / ${GRAMMARS[S.grammar].subtitle}`, '', 'AUTHOR SELECTION'),
+    readout('Selected grammar', `${GRAMMARS[S.grammar].title} (${GRAMMARS[S.grammar].subtitle})`, '', 'AUTHOR SELECTION'),
     readout('Retained structure', v == null ? null : fmt(100 - v), '%', 'AI ESTIMATE'),
     readout('Reconstructed area', fmt(st?.missing_area_m2), ' m²', 'MODEL EXPORT'),
     readout('Evidence', fmt(p?.evidence), '%', 'AI ESTIMATE'),
@@ -354,7 +371,7 @@ function setupFilm() {
   const missing = () => {
     v.removeAttribute('controls');
     ['#playFilm', '#playFull'].forEach((id) => { const b = $(id); if (b) { b.disabled = true; b.title = 'Film not included in this copy'; } });
-    const n = $('#filmNote'); if (n) n.textContent = 'FILM NOT INCLUDED IN THIS ONLINE COPY • POSTER ONLY';
+    const n = $('#filmNote'); if (n) n.textContent = 'The film is not included in this online copy.';
   };
   const src = v.querySelector('source');
   if (src) src.addEventListener('error', missing);

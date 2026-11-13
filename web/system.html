@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AI-Driven Lane Reconstruction · System</title>
+<title>AI-Driven Lane Reconstruction</title>
 <meta name="description" content="Damage quantification, generative repair and digital reconstruction for a fire-damaged Shanghai lilong. Demonstration dataset.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,17 +21,16 @@
     <a class="title" href="#hero" data-scroll="hero">AI-Driven Lane Reconstruction</a>
     <button class="pill" id="menuButton" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
   </nav>
-  <p class="statusbar mono" aria-label="System status">SYSTEM ONLINE <i aria-hidden="true">•</i> DEMONSTRATION DATASET <i aria-hidden="true">•</i> SHANGHAI LILONG <i aria-hidden="true">•</i> 08-STAGE DIGITAL RECONSTRUCTION</p>
   <div class="menu" id="menu" hidden>
     <ol>
-      <li><a href="#context" data-scroll="context"><span class="mono">01</span>Project context</a></li>
-      <li><a href="#workflow" data-scroll="workflow"><span class="mono">02</span>System workflow</a></li>
-      <li><a href="#input" data-scroll="input"><span class="mono">03</span>Input</a></li>
-      <li><a href="#analysis" data-scroll="analysis"><span class="mono">04</span>Damage analysis</a></li>
-      <li><a href="#inference" data-scroll="inference"><span class="mono">05</span>AI inference</a></li>
-      <li><a href="#options" data-scroll="options"><span class="mono">06</span>Repair options</a></li>
-      <li><a href="#reconstruction" data-scroll="reconstruction"><span class="mono">07</span>Digital reconstruction</a></li>
-      <li><a href="#results" data-scroll="results"><span class="mono">08</span>Results</a></li>
+      <li><a href="#context" data-scroll="context"><span class="mono">1</span>Project context</a></li>
+      <li><a href="#workflow" data-scroll="workflow"><span class="mono">2</span>System workflow</a></li>
+      <li><a href="#input" data-scroll="input"><span class="mono">3</span>Input</a></li>
+      <li><a href="#analysis" data-scroll="analysis"><span class="mono">4</span>Damage analysis</a></li>
+      <li><a href="#inference" data-scroll="inference"><span class="mono">5</span>AI inference</a></li>
+      <li><a href="#options" data-scroll="options"><span class="mono">6</span>Repair options</a></li>
+      <li><a href="#reconstruction" data-scroll="reconstruction"><span class="mono">7</span>Digital reconstruction</a></li>
+      <li><a href="#results" data-scroll="results"><span class="mono">8</span>Results</a></li>
     </ol>
   </div>
 </header>
@@ -44,12 +43,10 @@
   <p class="flank left">Measure the damage</p>
   <div class="hero-center">
     <svg class="mark" viewBox="0 0 80 80" aria-hidden="true">
-      <!-- a broken wall line and its repair: four nodes, one still burning -->
+      <!-- a broken wall line and its repair -->
       <path d="M8 58 L22 58 L26 46 L32 52 L38 34"/>
       <path class="dash" d="M38 34 L52 22 L72 22"/>
       <path d="M72 22 L72 58 L8 58"/>
-      <circle cx="8" cy="58" r="2.5"/><circle cx="72" cy="58" r="2.5"/><circle cx="72" cy="22" r="2.5"/>
-      <circle class="ember" cx="38" cy="34" r="2.5"/>
     </svg>
     <h1 id="heroTitle">AI-Driven<br>Lane Reconstruction</h1>
     <p class="hero-sub">Damage quantification<br>Generative repair<br>Digital reconstruction</p>
@@ -57,7 +54,7 @@
       <a class="pill" href="#input" data-scroll="input">Start analysis</a>
       <a class="pill" href="#results" data-scroll="results">View final reconstruction</a>
     </div>
-    <button class="demo-link" type="button" id="watchDemo"><i class="dot" aria-hidden="true"></i>Watch demo <span class="mono">ADD PHOTO • CHOOSE STYLE • STAGES 01–08</span></button>
+    <button class="demo-link" type="button" id="watchDemo">Watch demo</button>
   </div>
   <p class="flank right">Rebuild the missing</p>
 </section>
@@ -66,7 +63,7 @@
 <section class="context" id="context" aria-labelledby="contextTitle">
   <div class="wrap context-grid">
     <div class="context-copy">
-      <p class="label">Project context</p>
+      <p class="label">1 Project context</p>
       <h2 id="contextTitle">A lane that remembers</h2>
       <p class="prose">Historic lilong neighborhoods carry the memory of local residents, migrant communities and a city in transition. This project explores how damaged architecture can be measured, interpreted and repaired without erasing its history.</p>
       <p class="statement">Repair what was lost. Keep what survived.</p>
@@ -78,7 +75,7 @@
     </div>
     <figure class="context-figure">
       <img src="system_assets/context_damaged_lane.jpg" width="900" height="700" loading="lazy" alt="Digital model of the burned lilong row: six houses reduced to broken brick walls inside the surrounding block.">
-      <figcaption class="mono">COMMUNITY_05 • BEFORE REPAIR • MODEL VIEW</figcaption>
+      <figcaption class="line">Community 05 before repair, model view.</figcaption>
     </figure>
   </div>
 </section>
@@ -87,7 +84,7 @@
 <section class="section" id="workflow" aria-labelledby="workflowTitle">
   <div class="wrap">
     <div class="section-head">
-      <p class="label">System workflow</p>
+      <p class="label">2 System workflow</p>
       <h2 id="workflowTitle">From ruin to reconstruction</h2>
     </div>
     <div class="flow" id="flow"></div>
@@ -98,7 +95,7 @@
 <section class="section" id="input" aria-labelledby="inputTitle">
   <div class="wrap">
     <div class="section-head">
-      <p class="label">03 / Input</p>
+      <p class="label">3 Input</p>
       <h2 id="inputTitle">Upload evidence</h2>
       <p class="prose">Add a photograph or model of the damaged building and one style reference. Files are previewed in your browser only. They are not uploaded or analysed by a server; the analysis below uses the project's demonstration dataset.</p>
     </div>
@@ -113,7 +110,7 @@
       </article>
     </div>
     <div class="action-row">
-      <p class="mono state" id="uploadStatus" aria-live="polite">WAITING FOR TWO INPUTS</p>
+      <p class="line state" id="uploadStatus" aria-live="polite">Waiting for two inputs.</p>
       <button class="pill quiet" type="button" id="loadDemo">Load demonstration dataset</button>
       <button class="pill" type="button" id="analyze" disabled>Analyze damage</button>
     </div>
@@ -124,7 +121,7 @@
 <section class="section" id="analysis" aria-labelledby="analysisTitle">
   <div class="wrap">
     <div class="section-head">
-      <p class="label">04 / Damage analysis</p>
+      <p class="label">4 Damage analysis</p>
       <h2 id="analysisTitle">What the fire removed</h2>
       <p class="prose">Residual walls, fracture edges and voids of house R02_W_02, read from the project's model exports. Values the dataset does not contain are marked pending.</p>
     </div>
@@ -132,13 +129,13 @@
       <figure class="card media">
         <img src="system_assets/stage02_damage.jpg" width="1280" height="720" loading="lazy" alt="Damage scan of the burned row: a scan plane passes over the broken walls and labels mark measured fracture zones.">
         <span class="scanline" aria-hidden="true"></span>
-        <figcaption class="mono">R02_W_02 • DAMAGE SCAN • STAGE 02 CAPTURE</figcaption>
+        <figcaption class="line">Damage scan of house R02_W_02, captured at stage 2.</figcaption>
       </figure>
       <div class="card panel">
         <dl class="readouts" id="damageReadouts"></dl>
         <ol class="pipeline" id="pipeline" aria-label="Detection sequence"></ol>
         <div class="panel-foot">
-          <p class="mono state" id="analysisStatus" aria-live="polite">SEQUENCE NOT RUN</p>
+          <p class="line state" id="analysisStatus" aria-live="polite">Sequence not run yet.</p>
           <button class="pill quiet" type="button" id="runAnalysis">Run detection sequence</button>
         </div>
       </div>
@@ -150,20 +147,20 @@
 <section class="section" id="inference" aria-labelledby="inferenceTitle">
   <div class="wrap">
     <div class="section-head">
-      <p class="label">05 / AI inference</p>
+      <p class="label">5 AI inference</p>
       <h2 id="inferenceTitle">Evidence, inference, imagination</h2>
       <p class="prose">Every reconstructed surface is assigned to one source: what survives, what the typology implies, and what the repair grammar invents. The three shares always add up to 100%.</p>
     </div>
     <div class="split reverse">
       <div class="card panel">
-        <p class="label">Source shares • <span id="layerGrammar">BAN</span></p>
+        <p class="label">Source shares for <span id="layerGrammar">Ban</span></p>
         <div class="segments" id="segments" role="img" aria-label="Source shares"></div>
         <dl class="legend" id="legend"></dl>
         <dl class="readouts compact" id="inferenceReadouts"></dl>
       </div>
       <figure class="card media">
         <img src="system_assets/stage03_inference.jpg" width="1280" height="720" loading="lazy" alt="AI inference stage: evidence anchors on the broken walls and the selected target skeleton of the missing house drawn as thin lines.">
-        <figcaption class="mono">R02_W_02 • TARGET SKELETON • STAGE 03 CAPTURE</figcaption>
+        <figcaption class="line">Target skeleton of house R02_W_02, captured at stage 3.</figcaption>
       </figure>
     </div>
   </div>
@@ -173,12 +170,12 @@
 <section class="section" id="options" aria-labelledby="optionsTitle">
   <div class="wrap">
     <div class="section-head">
-      <p class="label">06 / Repair options</p>
+      <p class="label">6 Repair options</p>
       <h2 id="optionsTitle">One ruin, three grammars</h2>
       <p class="prose">The same residual walls, the same camera and the same missing boundary, repaired by three construction systems.</p>
     </div>
     <div class="options" id="optionGrid"></div>
-    <p class="mono state" id="optionStatus" aria-live="polite"></p>
+    <p class="line state" id="optionStatus" aria-live="polite"></p>
   </div>
 </section>
 
@@ -186,14 +183,14 @@
 <section class="section" id="reconstruction" aria-labelledby="filmTitle">
   <div class="wrap film-grid">
     <div class="film-copy">
-      <p class="label">07 / Digital reconstruction</p>
+      <p class="label">7 Digital reconstruction</p>
       <h2 id="filmTitle">From fire<br>to reconstructed city</h2>
       <p class="prose">The digital reconstruction traces the complete process from fire damage and AI analysis to three architectural repair possibilities.</p>
       <div class="actions">
         <button class="pill" type="button" id="playFilm">Play film</button>
         <a class="pill" id="enterSpace" href="experience.html?tour=1">Enter digital space</a>
       </div>
-      <p class="mono note" id="filmNote" aria-live="polite">FILM • 184 S • 1920 × 1080 • AMBIENT SOUND</p>
+      <p class="line note" id="filmNote" aria-live="polite">A 184-second film at 1920 × 1080 with ambient sound.</p>
     </div>
     <div class="card video-frame">
       <video id="film" controls preload="metadata" playsinline poster="system_assets/film_poster.jpg" aria-label="Project film: from fire to reconstructed city">
@@ -207,23 +204,22 @@
 <section class="section" id="results" aria-labelledby="resultsTitle">
   <div class="wrap">
     <div class="section-head">
-      <p class="label">08 / Results</p>
+      <p class="label">8 Results</p>
       <h2 id="resultsTitle">Reconstructed lane</h2>
     </div>
     <div class="results-grid">
       <figure class="card media results-figure">
         <img id="resultsImage" src="system_assets/results_city_ban.jpg" width="1600" height="1000" loading="lazy" alt="The reconstructed lane in its city block, repaired with the selected grammar.">
-        <figcaption class="mono" id="resultsCaption">COMMUNITY_05 • RECONSTRUCTED CITY • STAGE 08 CAPTURE</figcaption>
+        <figcaption class="line" id="resultsCaption">The reconstructed city, captured at stage 8.</figcaption>
       </figure>
       <div class="card panel results-panel">
-        <p class="complete mono" aria-live="polite"><i class="dot" aria-hidden="true"></i>RECONSTRUCTION COMPLETE • 6 / 6 UNITS</p>
+        <p class="complete line" aria-live="polite">Reconstruction complete. All 6 damaged units are rebuilt.</p>
         <dl class="results" id="resultReadouts"></dl>
         <div class="results-actions">
           <button class="pill" type="button" id="beforeAfter">View before / after</button>
           <a class="pill" href="experience.html?tour=1">Enter digital space</a>
           <button class="pill" type="button" id="playFull">Play full film</button>
         </div>
-        <p class="mono coming">EXPORT IMAGE • EXPORT MODEL • EXPORT REPORT • COMING SOON</p>
       </div>
     </div>
   </div>
@@ -238,17 +234,26 @@
 <!-- guided demo: caption bar and pointer (shown only while the demo runs) -->
 <div class="guide" id="guide" hidden role="region" aria-label="Guided demo">
   <span class="guide-progress" aria-hidden="true"><i id="guideProgress"></i></span>
-  <p class="mono" id="guideStep">01 / 08</p>
+  <p class="line" id="guideStep">Step 1 of 8</p>
   <div class="guide-copy" aria-live="polite"><p class="guide-title" id="guideTitle"></p><p class="prose" id="guideText"></p></div>
   <button class="pill" type="button" id="guideStop">Stop demo</button>
 </div>
 <div class="guide-pointer" id="guidePointer" hidden aria-hidden="true"></div>
 
+<!-- shown once when the guided demo starts; the walkthrough begins after it closes -->
+<div class="notice" id="demoNotice" hidden role="dialog" aria-modal="true" aria-labelledby="noticeTitle" aria-describedby="noticeText">
+  <div class="notice-card">
+    <h2 id="noticeTitle">Demo started</h2>
+    <p class="prose" id="noticeText">The walkthrough plays automatically. No need to use your mouse or keyboard.</p>
+    <p class="notice-hint">Press Esc to exit at any time.</p>
+    <button class="pill" type="button" id="noticeOk">Got it</button>
+  </div>
+</div>
+
 <footer class="footer">
   <div class="wrap footer-grid">
     <p>AI-Driven Lane Reconstruction</p>
-    <p class="mono">COMMUNITY_05 • SHANGHAI LILONG • DEMONSTRATION WORKFLOW</p>
-    <p class="prose small">Uploads are previewed locally and never sent to a server. Metrics are labelled as measured, model export, AI estimate or pending.</p>
+    <p class="prose small">Demonstration workflow for Community 05, a Shanghai lilong. Uploads are previewed locally and never sent to a server. Metrics are labelled as measured, model export, AI estimate or pending.</p>
   </div>
 </footer>
 
